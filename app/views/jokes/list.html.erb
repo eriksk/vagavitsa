@@ -1,0 +1,17 @@
+<h1>Flöde</h1>
+
+<% @jokes.each do | joke |%>
+
+<p>
+  <b>Buildup:</b>
+  <%= joke.buildup %>
+</p>
+
+<p>
+  <b>Punchline:</b>
+  <%= joke.punchline %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', jokes_path %>

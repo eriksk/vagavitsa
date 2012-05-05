@@ -1,0 +1,35 @@
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".spoiler").hide();
+    $(".punchline").click(function(){
+      var parent = $(this).parent();
+      parent.find(".spoiler").fadeIn();
+      parent.find(".punchline").hide();
+    });        
+  });
+</script>
+
+<h1>Flöde</h1>
+
+<% @jokes.each do | joke |%>
+
+<div class="well joke">
+  <h2>
+    <%= "\"#{joke.buildup}\"" %>
+  </h2>
+  <br />
+  <h2 class="spoiler">
+    <hr />
+    <%= "\"#{joke.punchline}\"" %>
+  </h2>
+  <div class="punchline alert alert-info">
+    <p>Click for punchline</p>
+  </div>
+</div>
+
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Joke', new_joke_path %>

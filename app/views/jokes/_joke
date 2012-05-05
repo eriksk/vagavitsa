@@ -1,0 +1,11 @@
+<div class="well">
+  <p>
+    <b>Buildup:</b>
+    <%= joke.buildup %>
+  </p>
+
+  <p>
+    <b>Punchline:</b>
+    <%= joke.punchline %>
+  </p>
+</div>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Buildup:</b>
+  <%= @joke.buildup %>
+</p>
+
+<p>
+  <b>Punchline:</b>
+  <%= @joke.punchline %>
+</p>
+
+
+<%= link_to 'Edit', edit_joke_path(@joke) %> |
+<%= link_to 'Back', jokes_path %>

@@ -1,5 +1,9 @@
 Vagavitsa::Application.routes.draw do
+  resources :jokes
+
   get "home/index"
+
+  get "jokes/list"
 
   root :to => "home#index"
 
