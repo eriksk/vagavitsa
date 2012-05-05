@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vagavitsa</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "boostrap" %>
+  <%= javascript_include_tag "bootstrap" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      	<ul class="nav">
+		  <li class="active">
+		    <a href="#" class="brand">Våga Vitsa</a>
+		  </li>
+		  <li><a href="#">Flöde</a></li>
+		  <li><a href="#">Kategorier</a></li>
+		  <li><a href="#">Ny vits</a></li>
+		  <li><a href="#">Om denna sidan</a></li>
+		</ul>
+      	<ul class="nav pull-right">
+		  <li><a href="#">Logga in</a></li>
+      	</ul>
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:80px;">
+	<%= yield %>
+</div>
+
+<hr />
+
+<div class="container center">
+	Copyright &copy; Erik Skoglund & Adam Hall 2012 - <%= Time.new.year %>
+</ddv>
+
+</body>
+</html>
