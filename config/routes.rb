@@ -1,10 +1,19 @@
 Vagavitsa::Application.routes.draw do
-  resources :jokes
+  resources :jokes do
+    
+    member do
+      post "vote"
+    end
+
+    collection do
+      get "list"
+      get "next"
+    end
+
+  end
 
   get "home/index"
-
-  get "jokes/list"
-
+  
   root :to => "home#index"
 
   # The priority is based upon order of creation:
@@ -62,5 +71,5 @@ Vagavitsa::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  #match ':controller(/:action(/:id))(.:format)'
 end

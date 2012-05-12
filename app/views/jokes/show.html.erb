@@ -20,19 +20,29 @@
     <%= "\"#{@joke.buildup}\"" %>
   </h2>
   <br />
-  <h2 class="spoiler">
+  <div class="spoiler">
+  <h2>
     <hr />
     <%= "\"#{@joke.punchline}\"" %>
   </h2>
-  <div class="punchline alert alert-info">
-    <p>Click for punchline</p>
+  <div class="clearfix">
+    <div class="actions pull-right">
+      <%= form_tag :action => 'vote', :id => @joke.id do | f | %>
+        <%= submit_tag 'Bra', :class => "btn btn-primary" %>
+        <%= submit_tag 'Anus', :class => "btn btn-danger" %>
+        <%= submit_tag 'Nästa', :class => "btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
   </div>
 
-  <p>TODO: Upvote/Downvote</p>
+  <div class="punchline alert alert-info">
+    <p>Click for punchline</p>
+  </div>  
 </div>
 
 <div class="container">
-	<div class="span6 offset3">
+	<div class="span16 offset3">
 	<div class="fb-comments" data-href="http://vagavitsa.se/jokes/<%= @joke.id %>" data-num-posts="10"></div>
 	</div>
 </div>

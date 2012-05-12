@@ -13,12 +13,20 @@ class JokesController < ApplicationController
   # GET /jokes/1
   # GET /jokes/1.json
   def show
+
     @joke = Joke.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @joke }
     end
+
+  end
+
+  def next
+    ids = Joke.find(:all).collect{ | j | j.id }
+    id = ids[rand(ids.length)]
+    redirect_to :action => 'show', :id => id
   end
 
   # GET /jokes/new
@@ -79,5 +87,13 @@ class JokesController < ApplicationController
       format.html { redirect_to jokes_url }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    @joke = Joke.find(params[:id])
+
+    puts params
+
+    redirect_to :action => 'next', :id => params[:id]
   end
 end
