@@ -7,8 +7,21 @@
   <%= stylesheet_link_tag    "boostrap" %>
   <%= javascript_include_tag "bootstrap" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "2cde85e2-8ccb-45d7-8dfd-dcef2387459d"}); </script>
+
 </head>
 <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/sv_SE/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
@@ -35,9 +48,25 @@
 
 <hr />
 
-<div class="container center">
-	Copyright &copy; Erik Skoglund & Adam Hall 2012 - <%= Time.new.year %>
-</ddv>
+<div class="container">
+  <div class="span14 offset2 well">
+  <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+  <span class='st_facebook_hcount' displayText='Facebook'></span>
+  <span class='st_fblike_hcount' displayText='Facebook Like'></span>
+  <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
+  <span class='st_twitter_hcount' displayText='Tweet'></span>
+  <span class='st_googleplus_hcount' displayText='Google +'></span>
+  <span class='st_pinterest_hcount' displayText='Pinterest'></span>
+  </div>
+</div>
+
+<hr />
+
+<div class="container">
+  <div class="offset4">
+	<p>Copyright &copy; Erik Skoglund & Adam Hall 2012 - <%= Time.new.year %></p>
+  </div>
+</div>
 
 </body>
 </html>

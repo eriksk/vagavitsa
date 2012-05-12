@@ -1,14 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Buildup:</b>
-  <%= @joke.buildup %>
-</p>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".spoiler").hide();
+    $(".punchline").click(function(){
+      var parent = $(this).parent();
+      parent.find(".spoiler").fadeIn();
+      parent.find(".punchline").hide();
+    });        
+  });
+</script>
 
-<p>
-  <b>Punchline:</b>
-  <%= @joke.punchline %>
-</p>
+<div>
+
+</div>
+
+<div class="well joke">
+  <h2>
+    <%= "\"#{@joke.buildup}\"" %>
+  </h2>
+  <br />
+  <h2 class="spoiler">
+    <hr />
+    <%= "\"#{@joke.punchline}\"" %>
+  </h2>
+  <div class="punchline alert alert-info">
+    <p>Click for punchline</p>
+  </div>
+
+  <p>TODO: Upvote/Downvote</p>
+</div>
+
+<div class="container">
+	<div class="span6 offset3">
+	<div class="fb-comments" data-href="http://vagavitsa.se:3000/show/<%= @joke.id %>" data-num-posts="10"></div>
+	</div>
+</div>
 
 
 <%= link_to 'Edit', edit_joke_path(@joke) %> |
