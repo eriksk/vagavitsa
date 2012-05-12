@@ -24,18 +24,15 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      	<ul class="nav">
+    <ul class="nav">
 		  <li class="active">
 		    <a href="/" class="brand">Våga Vitsa</a>
 		  </li>
-		  <li><%= link_to "Flöde", :controller => "jokes" %></li>
-		  <li><a href="#">Kategorier</a></li>
-		  <li><a href="#">Ny vits</a></li>
-		  <li><a href="#">Om denna sidan</a></li>
+      <li><%= link_to 'Ny vits', :controller => 'jokes', :action => 'new' %></li>
 		</ul>
-      	<ul class="nav pull-right">
-		  <li><a href="#">Logga in</a></li>
-      	</ul>
+    <ul class="nav pull-right">
+		    <li><a href="#">Logga in</a></li>
+    </ul>
     </div>
   </div>
 </div>
@@ -48,11 +45,11 @@
 
 <div class="container">
   <div class="span14 offset2 well">
-  <span class='st_sharethis_hcount' displayText='ShareThis'></span>
+  <span class='st_sharethis_hcount' displayText='Dela detta'></span>
   <span class='st_facebook_hcount' displayText='Facebook'></span>
-  <span class='st_fblike_hcount' displayText='Facebook Like'></span>
-  <span class='st_fbrec_hcount' displayText='Facebook Recommend'></span>
-  <span class='st_twitter_hcount' displayText='Tweet'></span>
+  <span class='st_fblike_hcount' displayText='Gilla'></span>
+  <span class='st_fbrec_hcount' displayText='Rekommendera'></span>
+  <span class='st_twitter_hcount' displayText='Tweeta'></span>
   <span class='st_googleplus_hcount' displayText='Google +'></span>
   <span class='st_pinterest_hcount' displayText='Pinterest'></span>
   </div>

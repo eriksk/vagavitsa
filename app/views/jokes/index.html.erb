@@ -11,6 +11,8 @@
 
 <h1>Flöde</h1>
 
+<%= link_to 'Ny vits', new_joke_path %>
+
 <% @jokes.each do | joke |%>
 
 <div class="well joke">
@@ -23,13 +25,8 @@
     <%= "\"#{joke.punchline}\"" %>
   </h2>
   <div class="punchline alert alert-info">
-    <p>Click for punchline</p>
+    <p>Klicka för punchline</p>
   </div>
 </div>
 
 <% end %>
-
-
-<br />
-
-<%= link_to 'New Joke', new_joke_path %>

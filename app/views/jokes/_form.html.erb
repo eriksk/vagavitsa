@@ -1,7 +1,7 @@
 <%= form_for(@joke) do |f| %>
   <% if @joke.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@joke.errors.count, "error") %> prohibited this joke from being saved:</h2>
+      <h2><%= pluralize(@joke.errors.count, "error") %> gjorde att skämtet inte kunde sparas:</h2>
 
       <ul>
       <% @joke.errors.full_messages.each do |msg| %>
@@ -11,15 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :buildup %><br />
-    <%= f.text_area :buildup %>
-  </div>
-  <div class="field">
-    <%= f.label :punchline %><br />
-    <%= f.text_area :punchline %>
-  </div>
+    <div class="field">
+      <%= f.label "Skämtets uppbyggnad" %><br />
+      <%= f.text_area :buildup %>
+    </div>
+    <div class="field">
+      <%= f.label "Punchline" %><br />
+      <%= f.text_area :punchline %>
+    </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Skapa vits", :class => "btn btn-primary" %>
   </div>
 <% end %>
